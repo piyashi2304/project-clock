@@ -8,12 +8,14 @@ body{
 .container{
     /* border: 1px solid white; */
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     height: 100vh;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
-.leftcontainer{
-     margin-left: 90px;
-}
+/* .leftcontainer{ */
+     /* margin-left: 90px; */
+/* } */
 .card{
     display: grid;
     grid-template-columns: 290px;
@@ -21,7 +23,7 @@ body{
     gap: 10px;
 }
 .dash{
-    padding-left: 56px;
+    padding-left: 40px;
     font-size: 25px;
     color: black;
     font-weight: bold;
@@ -38,7 +40,7 @@ body{
     justify-content: space-around;
     color: #3D087BDE;
 }
-#wake-up{
+#wake{
     color: #3D087B;
 }
 .lunch{
@@ -46,7 +48,7 @@ body{
     justify-content: space-around;
     color: #3D087BDE;
 }
-#lunch-time{
+#lunch{
     color: #3D087B;
 }
 .naptime{
@@ -54,7 +56,7 @@ body{
     justify-content: space-around;
     color: #3D087BDE;
 }
-#nap-time{
+#nap{
     color: #3D087B;
 }
 .nighttime{
@@ -62,7 +64,7 @@ body{
     justify-content: space-around;
     color: #3D087BDE;
 }
-#night-time{
+#night{
     color: #3D087B;
 }
 .card2{
@@ -71,27 +73,28 @@ body{
     background-color:#9140B5;
     border-radius: 7px;
 }
-.card2 p{
+#greeting{
     color: #FFFFFF;
     padding-left: 20px;
     padding-top: 12px;
     font-size: 20px;
     font-style: initial;
 }
-.card3{
+button{
     grid-column: 1/2;
     grid-row:3/4 ;
     background:linear-gradient(to right, #6E54EC,#CB52F8,#FC5EFF,#F1A7C5 ) ;
     border-radius: 7px;
 }
-.card3 p{
+#buttom{
     text-align: center;
-    padding-top: 10px;
+    /* padding-top: 5px; */
     color: #FFFFFF;
     font-size: 20px;
 }
 .card3:hover{
     background: linear-gradient(to right,#F1A7C5,#FC5EFF,#CB52F8,#6E54EC);
+    
 }
 .card4{
     grid-column:2/3 ;
@@ -99,34 +102,38 @@ body{
     background-color: #9140B5;
     border-radius: 10px;
 }
-.card4 pre{
+.card4 p{
     color: #F25CFE;
-    padding-left: 5px;
+    font-size: 10px;
+    /* padding-left: 5px; */
 }
-.rightcontainer{
-    margin-left: 100px;
-}
+/* .rightcontainer{ */
+    /* margin-left: 100px; */
+/* } */
 .time{
     border: 1px solid black;
     border-radius: 8px;
-    width: 400px;
+    width: 500px;
     height: 90px;
     background-color: white;
     display: flex;
+    justify-content: space-evenly;
     position: relative;
 }
 .clock{
     display: flex;
     justify-content: space-around;
-    gap: 20px;
-    width: 370px;
+    gap: 40px;
     height: 50px;
     padding-top: 10px;
     color: #8A11BF;
     
 }
-.colon{
-   font-size: 50px;
+.clock p{
+    font-size: 25px;
+}
+.colon p{
+   font-size: 30px;
 }
 .watch{
     font-size: 20px;
@@ -140,7 +147,7 @@ body{
     font-size: 22px;
 }
 
-.hour, .sec, .min{
+.hrss, .secs, .mins{
     background-color: #F6E2FF;
 }
 
@@ -150,12 +157,12 @@ body{
     right: 30px;
     background-color: #EDEDED;
     border-radius: 10px;
-    width:340px ;
+    width:450px ;
     opacity: 70%;
     z-index: -1;
 }
 .time .item2{
-    width: 320px;
+    width: 420px;
     position: absolute;
     top: 25px;
     right: 40px;
@@ -166,7 +173,7 @@ body{
 }
 .box{
     display: grid;
-    grid-template-columns: 400px;
+    grid-template-columns: 500px;
     grid-template-rows: 70px 300px;
     gap: 10px;
 }
@@ -175,7 +182,7 @@ body{
     grid-row: 1/2;
     background-color:#EDEDED ;
 }
-.box1 p{
+#settime{
    color: #8E53F0;
    text-align: center;
    padding-top: 25px;
@@ -185,7 +192,7 @@ body{
     grid-column: 1/2;
     grid-row: 2/3;
     background-color: #EDEDED;
-    background-image: url(./Component\ 30\ –\ 1.svg);
+    /* background-image: url(./Component\ 30\ –\ 1.svg); */
     background-size: cover;
     background-position: center;
 }
@@ -199,5 +206,6 @@ body{
     .container{
        flex-wrap: wrap;
     }
+
     
 }
