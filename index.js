@@ -46,7 +46,14 @@ if(hours>=12){
         greeting.innerHTML = "Good Night";
     }
 
-    // let button=document.getElementById("button");
+    let button=document.getElementById("button");
+    button.addEventListener("mouseover",function(){
+        this.innerText="Party Time"
+    })
+    console.log("button")
+    button.addEventListener("mousehout",function(){
+        this.innerText="Set Alarm"
+    })
     button.addEventListener("click" ,function(){
         let date=new Date();
         let hours= date.getHours();
@@ -59,12 +66,12 @@ if(hours>=12){
         if(parseInt(wakeUp.value)===hours)
         {
             document.getElementById("settime").innerHTML="GRAB SOME HEALTHY BREAKFAST!!!";
-            document.getElementById("Image").src ="./Component30-1.svg";
+            document.getElementById("Image").src ="./b.svg";
         }
         else if(parseInt(lunch.value)===hours)
        {
         document.getElementById("settime").innerHTML="LET'S HAVE SOME LUNCH !!";
-        document.getElementById("Image").src="./Component31-1.svg";
+        document.getElementById("Image").src="./a.svg";
        }
        else if(parseInt(nap.value)===hours)
        {
@@ -74,7 +81,8 @@ if(hours>=12){
        else if(parseInt(night.value)===hours)
        {
         document.getElementById("settime").innerHTML="CLOSE YOUR EYES AND GO TO SLEEP";
-        document.getElementById("Image").src="./Component32-1.svg";
+        document.getElementById("Image").src="./c.svg";
+    
        }
        let timing = document.getElementsByClassName("timing");
        timing[0].innerText = wakeUp.options[wakeUp.selectedIndex].text;
@@ -82,10 +90,5 @@ if(hours>=12){
        timing[2].innerText = nap.options[nap.selectedIndex].text;
        timing[3].innerText = night.options[night.selectedIndex].text;
     })
-    let button=button.getElementById("button")
-    button.addEventListener("mousehover",function(){
-        this.innerText="Party Time"
-    })
-    button.addEventListener("mousehout",function(){
-        this.innerText="Party Time"
-    })
+    // let button=document.getElementById("button")
+ 

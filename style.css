@@ -107,36 +107,35 @@ button{
     font-size: 10px;
     /* padding-left: 5px; */
 }
-/* .rightcontainer{ */
-    /* margin-left: 100px; */
-/* } */
 .time{
     border: 1px solid black;
     border-radius: 8px;
-    width: 500px;
-    height: 90px;
+    width: 100%;
+    height: auto;
     background-color: white;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     position: relative;
 }
 .clock{
     display: flex;
     justify-content: space-around;
-    gap: 40px;
+    gap: 20px;
     height: 50px;
-    padding-top: 10px;
+    padding: 10px 0;
     color: #8A11BF;
     
 }
 .clock p{
-    font-size: 25px;
+    font-size: 18pxpx;
 }
 .colon p{
-   font-size: 30px;
+   font-size: 24px;
 }
 .watch{
-    font-size: 20px;
+    font-size: 16px;
     color: #3D087B;
     text-align: center;
 }
@@ -144,7 +143,7 @@ button{
     background-image: url(./AM_svg.svg);
     font-weight: bold;
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .hrss, .secs, .mins{
@@ -157,7 +156,7 @@ button{
     right: 30px;
     background-color: #EDEDED;
     border-radius: 10px;
-    width:450px ;
+    width:90% ;
     opacity: 70%;
     z-index: -1;
 }
@@ -186,7 +185,7 @@ button{
    color: #8E53F0;
    text-align: center;
    padding-top: 25px;
-   font-size: 20px;
+   font-size: 18px;
 }
 .box2{
     grid-column: 1/2;
@@ -200,12 +199,24 @@ button{
     .container{
        flex-wrap: wrap;
     }
-    
-}
+    .leftcontainer{
+        width: 100%;
+        text-align: center;
+    }
+    .rightcontainer{
+        align-items: center;
+        justify-content: center;
+    }
+    .time{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}   
+
 @media screen and (min-width:500px) and (max-width:900px) {
     .container{
        flex-wrap: wrap;
     }
-
-    
 }
