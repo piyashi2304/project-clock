@@ -346,16 +346,14 @@ select:focus {
         grid-row: 5/6;
     }
 
-    /* 1th Component */
     .Clock_Logo {
         width: 150px;
 
     }
 
-    /* 2nd Component */
     .settimebox {
         width: 100%;
-        padding: 10px 5px;
+        padding: 5px 5px;
     }
 
     .Reminder_Name {
