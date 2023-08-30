@@ -47,18 +47,6 @@ function setTime() {
     if (newHour > 12) {
         newHour -= 12;
     }
-
-
-    if (newMin <= 9) {
-        newMin = '0' + newMin;
-    }
-
-    if (newSec <= 9) {
-        newSec = '0' + newSec;
-    }
-    if (newHour == 0) {
-        newHour = 12;
-    }
     Time_Hour.innerText = newHour;
     Time_Minute.innerText = newMin;
     Time_Second.innerText = newSec;
@@ -95,17 +83,17 @@ SetAlarm_Btn.addEventListener('click', () => {
 
     if (Number(SetLunchTime.value) === hours) {
         Message2.innerText = "LET'S HAVE SOME LUNCH !!";
-        Reminder_Poster.src = "./Images/LunchPoster.svg";
+        Reminder_Poster.src = "./a.svg";
     }
     else if (Number(SetNapTime.value) === hours) {
         Message2.innerText = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
-        Reminder_Poster.src = "./Images/lunch_image.png";
+        Reminder_Poster.src = "./lunch_image.png";
     }
     else if (Number(SetNightTime.value) === hours) {
         Message2.innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
-        Reminder_Poster.src = "./Images/NightPoster.svg";
+        Reminder_Poster.src = "./c.svg";
     } else {
         Message2.innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
-        Reminder_Poster.src = "./Images/WakeUpPoster.svg";
+        Reminder_Poster.src = "./b.svg";
     }
 })
