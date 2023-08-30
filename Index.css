@@ -373,12 +373,10 @@ select:focus {
     }
 
 
-    /* 4th Component */
     #SetAlarm_Btn {
         width: 70%;
     }
 
-    /* 5th Component */
     .Timing_Box {
         padding: 10px;
     }
@@ -406,7 +404,6 @@ select:focus {
         font-size: 15px;
     }
 
-    /* 7th Component  */
     .Message_Container2 {
         padding: 0px 5px;
     }
