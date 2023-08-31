@@ -1,7 +1,7 @@
-const Time_Hour = document.getElementById("Time_Hour");
-const Time_Minute = document.getElementById("Time_Minute");
-const Time_Second = document.getElementById("Time_Second");
-const Time_AMPM = document.getElementById("Time_AMPM");
+const THour = document.getElementById("Time_Hour");
+const TMinute = document.getElementById("Time_Minute");
+const TSecond = document.getElementById("Time_Second");
+const TAMPM = document.getElementById("Time_AMPM");
 
 const Message1 = document.getElementById("Message1");
 const Reminder_Poster = document.getElementById("Reminder_Poster");
@@ -9,52 +9,52 @@ const Message2 = document.getElementById("Message2");
 
 const SetAlarm_Btn = document.getElementById("SetAlarm_Btn");
 
-const SetWakeTime = document.getElementById("SetWakeTime");
-const SetNapTime = document.getElementById("SetNapTime");
-const SetLunchTime = document.getElementById("SetLunchTime");
-const SetNightTime = document.getElementById("SetNightTime");
+const WakeTime = document.getElementById("SetWakeTime");
+const NapTime = document.getElementById("SetNapTime");
+const LunchTime = document.getElementById("SetLunchTime");
+const NightTime = document.getElementById("SetNightTime");
+console.log(NightTime)
 
-const WakeUPLabel = document.getElementById("WakeUPLabel");
-const LunchTimeLabel = document.getElementById("LunchTimeLabel");
-const NapTimeLabel = document.getElementById("NapTimeLabel");
-const NightTimeLabel = document.getElementById("NightTimeLabel");
+const Timing = document.querySelectorAll(".Timing");
 
 
 
-function setTime() {
+
+function Clock() {
     let newDate = new Date();
-    let newHour = newDate.getHours();
-    let newMin = newDate.getMinutes();
-    let newSec = newDate.getSeconds();
+    let nHour = newDate.getHours();
+    let nMin = newDate.getMinutes();
+    let nSec = newDate.getSeconds();
     let AMPM = "AM";
 
+    if (nHour >= 12 && nHour < 16) {
+        Message1.innerText = "GOOD AFTERNOON !! TAKE SOME SLEEP"
+    }
+    else if (nHour >= 16 && nHour < 20 ) {
+       Message1.innerHTML = "GOOD EVENING !!"
+    }
+    else if (nHour >= 20 && nHour < 23) {
+        Message1.innerHTML = "GOOD NIGHT !!"
+    }else{
+        Message1.innerHTML = "GOOD MORNING!! WAKE UP !"
+    }
     
-    if(newHour )
-    if (newHour >= 12 && newHour < 16) {
-        DynamicMessage.innerText = "GOOD AFTERNOON !! TAKE SOME SLEEP"
-    }
-    if (newHour >= 16 && newHour < 20 && AMPM === 'PM') {
-        DynamicMessage.innerText = "GOOD EVENING !!"
-    }
-    if (newHour >= 20 && newHour < 23 && AMPM === 'PM') {
-        DynamicMessage.innerText = "GOOD NIGHT !!"
-    }
-    
-    if (newHour >= 12) {
+    if (nHour >= 12) {
         AMPM = "PM";
     }
 
-    if (newHour > 12) {
-        newHour -= 12;
+    if (nHour > 12) {
+        nHour -= 12;
     }
-    Time_Hour.innerText = newHour;
-    Time_Minute.innerText = newMin;
-    Time_Second.innerText = newSec;
-    Time_AMPM.innerText = AMPM;
+    THour.innerText = nHour;
+    TMinute.innerText = nMin;
+    TSecond.innerText = nSec;
+    TAMPM.innerText = AMPM;
 }
 
-setInterval(setTime, 1000);
-
+setInterval(()=>{
+    Clock() 
+},1000);
 
 
 SetAlarm_Btn.addEventListener('mouseover', () => {
@@ -68,30 +68,26 @@ SetAlarm_Btn.addEventListener('click', () => {
     let date = new Date();
     let hours = date.getHours();
 
-    // These lines of code give the selected index of the select option.
-    let wakeSelectedIndex = SetWakeTime.selectedIndex;
-    let napSelectedIndex = SetNapTime.selectedIndex;
-    let lunchSelectedIndex = SetLunchTime.selectedIndex;
-    let nightSelectedIndex = SetNightTime.selectedIndex;
 
 
-    // THese line of code set the innerText of each label as the user select the option.
-    WakeUPLabel.innerText = SetWakeTime.children[wakeSelectedIndex].innerText;
-    LunchTimeLabel.innerText = SetNapTime.children[napSelectedIndex].innerText;
-    NapTimeLabel.innerText = SetLunchTime.children[lunchSelectedIndex].innerText;
-    NightTimeLabel.innerText = SetNightTime.children[nightSelectedIndex].innerText;
 
-    if (Number(SetLunchTime.value) === hours) {
+
+    Timing[0].innerText = WakeTime.children[WakeTime.selectedIndex].innerText;
+    Timing[1].innerText = NapTime.children[NapTime.selectedIndex].innerText;
+    Timing[2].innerText = LunchTime.children[LunchTime.selectedIndex].innerText;
+    Timing[3].innerText = NightTime.children[NightTime.selectedIndex].innerText;
+
+    if (parseInt(LunchTime.value) === hours) {
         Message2.innerText = "LET'S HAVE SOME LUNCH !!";
         Reminder_Poster.src = "./a.svg";
     }
-    else if (Number(SetNapTime.value) === hours) {
+    else if (parseInt(NapTime.value) === hours) {
         Message2.innerText = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
         Reminder_Poster.src = "./lunch_image.png";
     }
-    else if (Number(SetNightTime.value) === hours) {
+    else if (parseInt(NightTime.value) === hours) {
         Message2.innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
-        Reminder_Poster.src = "./c.svg";
+        Reminder_Poster.src = "./NightPoster.svg";
     } else {
         Message2.innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
         Reminder_Poster.src = "./b.svg";
